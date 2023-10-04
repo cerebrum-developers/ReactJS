@@ -1,0 +1,61 @@
+.loginPageHugging {
+  height: 485px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-transform: none;
+  .formAll {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    .form {
+      background: #ffffff;
+      box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.1);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 315px;
+      padding-bottom: 2rem;
+      text-transform: none;
+    }
+    .signupBtnHugging {
+      width: 240px;
+      color: #5E35B1;
+      font-family: "Roboto" !important;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 33px;
+      padding-top: 20px;
+      padding-bottom: 15px;
+      text-transform: none;
+    }
+    .relativeSVG {
+      position: relative;
+    }
+    .absoluteSVG {
+      position: absolute;
+      left: 6px;
+      top: 9px;
+      input{
+        margin-bottom: 0.4rem;
+      }
+    }
+  }
+  .account {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+  }
+  .errors{
+    margin: 0;
+    font-size: 13px;
+    color: red;
+    width: 250px;
+  }
+}

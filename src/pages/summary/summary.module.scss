@@ -1,0 +1,187 @@
+.landing4bghugging {
+  padding: 12px;
+  height: 485px;
+  font-family: "Roboto" !important;
+  line-height: normal;
+  font-size: 14px;
+  text-transform: none;
+  .SummaryHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    .hGoesHere {
+      color: var(--black);
+    }
+  }
+  .SummaryButtons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: none;
+    .playbtn {
+      border: none;
+      background: transparent;
+      padding: 0;
+      margin-right: 8px;
+      margin-top: 2px;
+      height: auto;
+      line-height: normal;
+    }
+    .vectorIcon {
+      background: #404040;
+      border: none;
+      padding: 6px 8px 6px 8px;
+      border-radius: 50px;
+      margin: 0px 8px 0px 0px;
+      vertical-align: baseline;
+      display: inline-block;
+      height: auto;
+      line-height: normal;
+    }
+  }
+  .cardShadow {
+    background: #ffffff;
+    padding-top: 1px;
+    margin-top: 7px;
+    padding: 7px;
+    overflow: auto;
+    height: 390px;
+  }
+  .cardWords {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    background: #f2ecff;
+    // margin: 5px 6px 5px 6px;
+    input {
+      background: transparent !important;
+      border: none !important;
+      font-weight: 600 !important;
+      margin-left: 5px !important;
+      padding: 0 !important;
+      color: var(--black) !important;
+      box-shadow: none !important;
+      font-size: 14px !important;
+    }
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 28px;
+      margin-right: 5px;
+    }
+  }
+  .aiNote {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+    div {
+      display: flex;
+    }
+    span {
+      color: #8e97a0;
+      font-size: 13px;
+    }
+    svg {
+      margin: 0px 0px 0px 8px;
+    }
+  }
+  .ai_huggingscroll_box {
+    ul {
+      padding: 0px;
+      margin: 0px 5px 0px 20px;
+      font-size: 13px;
+    }
+    li {
+      margin-bottom: 0.8rem;
+      line-height: normal;
+      color: #404040;
+      font-size: 13px;
+      list-style: disc !important;
+    }
+  }
+  .dashboardBorderHugging {
+    background: #e3d4ff;
+    height: 3px;
+  }
+}
+
+.libraries_hugging_all {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 0px 15px;
+  color: #666666;
+  margin-bottom: 8px;
+  position: relative;
+  height: 36px;
+  button {
+    background: transparent;
+    border: none;
+    color: #666666;
+    outline: none;
+    text-transform: none;
+    padding: 0;
+    height: auto;
+  }
+  .documentName {
+    min-width: 110px;
+  }
+  ul {
+    background: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    left: 224px;
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    top: 21px;
+    z-index: 10;
+    padding: 7px;
+    width: 100px;
+    height: 80px;
+    margin: 0;
+    box-sizing: content-box;
+    li {
+      border-bottom: 1px solid #e7e7e7;
+      font-size: 13px;
+      padding: 0;
+      line-height: normal;
+      margin: 0px 0px 7px 0px;
+    }
+    a {
+      text-decoration: none;
+      color: #404040;
+      margin: 3px;
+      span {
+        margin-right: 5px;
+      }
+      svg {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.libraryAll {
+  height: 485px;
+  padding: 8px;
+  .Hlibrary {
+    text-align: center;
+    margin: 20px 0px;
+    color: var(--black);
+    font-size: 18px;
+    font-weight: 300;
+  }
+  button {
+    background: transparent;
+    border: none;
+    color: #666666;
+    padding: 0;
+    height: auto;
+  }
+}
