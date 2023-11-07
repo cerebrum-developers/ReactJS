@@ -1,5 +1,4 @@
-import React from 'react';
-import InputForm from './Form';
+import InputForm from "./Form";
 
 const Register = () => <InputForm />;
 

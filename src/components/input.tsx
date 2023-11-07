@@ -1,25 +1,33 @@
-import React, { memo } from 'react';
+import { memo } from "react";
+
+type AddValue = (e: React.ChangeEvent<HTMLInputElement>) => void | null;
+
+interface userType {
+  name: string;
+  placeholder: string;
+  type: string;
+  addValue: AddValue;
+  value: string;
+  id: string;
+  style: object;
+}
 
 const UserInput = ({
   name,
   placeholder,
   type,
-  refs,
   addValue,
-  showValue,
-  defaultValue,
+  value,
   id,
   style,
-}: any) => (
+}: userType) => (
   <input
     placeholder={placeholder}
     type={type}
     name={name}
     onChange={addValue}
-    ref={refs}
-    defaultValue={defaultValue}
     id={id}
-    value={showValue}
+    value={value}
     style={style}
     autoComplete="off"
     multiple

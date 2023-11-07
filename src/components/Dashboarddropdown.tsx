@@ -1,19 +1,26 @@
-import React, { useState } from 'react';
-import styles from '../pages/dashboard/dashboard.module.scss';
+import { useState } from "react";
+import styles from "../pages/dashboard/dashboard.module.scss";
 
-const Dashboarddropdown = ({ setView }: any) => {
+interface PropsDashboard {
+  setView: React.Dispatch<React.SetStateAction<number>>;
+}
+const Dashboarddropdown = ({ setView }: PropsDashboard) => {
   const data = [
     {
       id: 1,
-      name: 'Upload Document',
+      name: "Summary",
     },
     {
       id: 2,
-      name: 'Paste Link',
+      name: "Upload Document",
     },
     {
       id: 3,
-      name: 'Paste Text',
+      name: "Paste Link",
+    },
+    {
+      id: 4,
+      name: "Paste Text",
     },
   ];
 
@@ -29,10 +36,10 @@ const Dashboarddropdown = ({ setView }: any) => {
       <div className={styles.welcomeH}>Welcome to Huggingface</div>
       <div className={styles.uploadBtn}>
         {data.map((x) => (
-          <div>
+          <div key={x.id}>
             <button
               type="button"
-              className={activeButton === x.id ? styles.upload : ''}
+              className={activeButton === x.id ? styles.upload : ""}
               onClick={() => handleButtonClick(x.id)}
             >
               {x.name}

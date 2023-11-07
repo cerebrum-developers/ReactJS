@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import InputFeild from './input';
-import { input } from '../globalStyle';
-import styles from '../pages/dashboard/dashboard.module.scss';
+import { useState } from "react";
+import InputFeild from "./input";
+import { input } from "../globalStyle";
+import styles from "../pages/dashboard/dashboard.module.scss";
 
 const Pastetext = () => {
-  const [text, setText] = useState('');
-  const handleChange = (e: any) => {
+  const [text, setText] = useState("");
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value);
   };
   return (
@@ -16,8 +16,9 @@ const Pastetext = () => {
           placeholder="Paste Text..."
           name="paste_text"
           value={text}
-          onChange={handleChange}
+          addValue={handleChange}
           style={input}
+          id=""
         />
       </div>
     </form>

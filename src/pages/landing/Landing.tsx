@@ -1,13 +1,12 @@
-import React from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link } from "react-router-dom";
 import {
   downloadlanding,
   landingcopy,
   landingIcon,
   landingPlay,
   run,
-} from '../../assets/icon';
-import styles from './landing.module.scss';
+} from "../../assets/icon";
+import styles from "./landing.module.scss";
 
 const Landing = () => {
   const navigate = useNavigate();
@@ -20,7 +19,7 @@ const Landing = () => {
             <button
               type="button"
               className={styles.signupBtnHugging}
-              onClick={() => navigate('/login')}
+              onClick={() => navigate("/login")}
             >
               Run Summary
               <span>{run}</span>

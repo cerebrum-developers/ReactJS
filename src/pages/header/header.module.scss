@@ -8,9 +8,9 @@
     line-height: normal;
     font-size: 14px;
     text-transform: none;
-    .closeButton{
-        margin: 0 0.8rem;
-    }
+}
+.closeButton{
+    margin: 0 0.8rem;
 }
 .headerShadowHugging{
     display: flex;
@@ -19,22 +19,22 @@
     background: #FFFFFF;
     box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.15);
     height: 40px;
-    a{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-left: 5px;
-    }
-    .headerButton{
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        width: 165px;
-        margin-right: 0.2rem;
-    }
-    .profileLogo{
-        border: none;
-        background-color: #FFFFFF;
-        padding: 0;
-    }
+}
+.headerShadowHugging a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+}
+.headerButton{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 165px;
+    margin-right: 0.2rem;
+}
+.profileLogo{
+    border: none;
+    background-color: #FFFFFF;
+    padding: 0;
 }

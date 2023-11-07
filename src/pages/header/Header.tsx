@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { useLocation, useNavigate, Link } from 'react-router-dom';
-import { buttonStyle } from '../../globalStyle';
-import { registerData } from '../../app/reducer/loginSlice';
+import { useEffect } from "react";
+import { useLocation, useNavigate, Link } from "react-router-dom";
+import { useMutation } from "@tanstack/react-query";
+import { registerApi } from "src/app/apiServices";
+import ButtonShow from "../../components/Button";
+import styles from "./header.module.scss";
 import {
   arrow,
   blackarrowIcon,
@@ -11,23 +12,27 @@ import {
   copyIcon,
   navbarlogo,
   profile,
-} from '../../assets/icon';
-import styles from './header.module.scss';
-import ButtonShow from '../../components/Button';
+} from "../../assets/icon";
+import { buttonStyle } from "../../globalStyle";
 
 const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const dispatch = useDispatch();
+  const { mutate: mutateRegister } = useMutation({
+    mutationKey: ["registerUser"],
+    mutationFn: registerApi,
+  });
+
   useEffect(() => {
-    dispatch(registerData());
-  }, [dispatch]);
-  const token = localStorage.getItem('auth');
+    mutateRegister();
+  }, [mutateRegister]);
+
+  const token = localStorage.getItem("auth");
 
   return (
     <div>
-      {location.pathname === '/' ? (
+      {location.pathname === "/" ? (
         <div className={styles.loginBtnHugging}>
           <span id="minimize-button">{arrow}</span>
           <span id="close-button" className={styles.closeButton}>
@@ -36,26 +41,25 @@ const Header = () => {
         </div>
       ) : (
         <div className={styles.headerShadowHugging}>
-          <Link to={token ? '/dashboardupload' : ''}>{navbarlogo}</Link>
+          <Link to={token ? "/dashboardupload" : ""}>{navbarlogo}</Link>
           <div className={styles.headerButton}>
-            {(() => {
-              if (token) {
-                return (
-                  <ButtonShow
-                    styleClass={styles.profileLogo}
-                    action={() => navigate('/profile')}
-                    name={profile}
-                  />
-                );
-              }
-              return (
-                <ButtonShow
-                  action={() => navigate('/login')}
-                  style={buttonStyle.border}
-                  name="Log in"
-                />
-              );
-            })()}
+            {token ? (
+              <ButtonShow
+                styleClass={styles.profileLogo}
+                action={() => navigate("/profile")}
+                name={profile}
+                type=""
+                style={null}
+              />
+            ) : (
+              <ButtonShow
+                action={() => navigate("/login")}
+                style={buttonStyle.border}
+                name="Log in"
+                type=""
+                styleClass=""
+              />
+            )}
             <span>{copyIcon}</span>
             <span id="minimize-button">{blackarrowIcon}</span>
             <span id="close-button">{closegrayIcon}</span>

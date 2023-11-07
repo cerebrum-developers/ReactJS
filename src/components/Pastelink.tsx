@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { linkIcon } from '../assets/icon';
-import InputFeild from './input';
-import { input } from '../globalStyle';
-import styles from '../pages/dashboard/dashboard.module.scss';
+import { useState } from "react";
+import { linkIcon } from "../assets/icon";
+import InputFeild from "./input";
+import { input } from "../globalStyle";
+import styles from "../pages/dashboard/dashboard.module.scss";
 
 const Pastelink = () => {
-  const [link, setLink] = useState('');
+  const [link, setLink] = useState("");
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setLink(e.target.value);
   };
 
@@ -21,7 +21,8 @@ const Pastelink = () => {
           name="paste_link"
           value={link}
           style={input}
-          onChange={handleChange}
+          addValue={handleChange}
+          id=""
         />
       </div>
     </form>

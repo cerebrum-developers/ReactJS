@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { BsThreeDotsVertical } from 'react-icons/bs';
+import { useEffect, useRef, useState } from "react";
+import { BsThreeDotsVertical } from "react-icons/bs";
 import {
   closegrayIcon,
   deletee,
@@ -8,9 +8,18 @@ import {
   like,
   playIcon,
   renameIcon,
-} from '../../assets/icon';
-import ButtonShow from '../../components/Button';
-import styles from './summary.module.scss';
+} from "../../assets/icon";
+import styles from "./summary.module.scss";
+
+interface DataObj {
+  name: string;
+  date: string;
+  id: number;
+}
+
+interface PropsLibrary {
+  dataObj: DataObj;
+}
 
 export default function AiNote() {
   return (
@@ -24,8 +33,6 @@ export default function AiNote() {
           replaces Babel for individual files and Terser for minifying output
           bundles. It is 17x
         </div>
-
-        <ButtonShow />
       </div>
     </div>
   );
@@ -89,7 +96,7 @@ export const Loreum = () => (
   </>
 );
 
-export const Libraries = ({ dataObj }: any) => {
+export const Libraries = ({ dataObj }: PropsLibrary) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -104,9 +111,9 @@ export const Libraries = ({ dataObj }: any) => {
       }
     };
 
-    document.addEventListener('mousedown', handleOutsideClick);
+    document.addEventListener("mousedown", handleOutsideClick);
     return () => {
-      document.removeEventListener('mousedown', handleOutsideClick);
+      document.removeEventListener("mousedown", handleOutsideClick);
     };
   }, []);
 

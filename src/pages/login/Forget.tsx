@@ -1,40 +1,48 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { passwordicon } from '../../assets/icon';
-import ButtonShow from '../../components/Button';
-import InputFeild from '../../components/input';
-import { input, buttonStyle } from '../../globalStyle';
-import styles from './login.module.scss';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { passwordicon } from "../../assets/icon";
+import ButtonShow from "../../components/Button";
+import InputFeild from "../../components/input";
+import { input, buttonStyle } from "../../globalStyle";
+import styles from "./login.module.scss";
 
 const Forget = () => {
   const navigate = useNavigate();
 
-  const [forgot, setForgot] = useState<any>({
-    password: '',
-    cpassword: '',
-  });
-  const [error, setError] = useState<any>();
+  interface Forgot {
+    password: string;
+    cpassword: string;
+  }
 
-  const handleChange = (e: any) => {
+  interface Error {
+    password?: string;
+    cpassword?: string;
+  }
+
+  const [forgot, setForgot] = useState<Forgot>({
+    password: "",
+    cpassword: "",
+  });
+  const [error, setError] = useState<Error>();
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setForgot({ ...forgot, [name]: value });
   };
 
   const validation = () => {
-    const err: any = {};
+    const err: Error = {};
     if (!forgot.password || !forgot.cpassword) {
-      err.password = 'Password is required';
+      err.password = "Password is required";
     } else if (forgot.cpassword !== forgot.password) {
       err.cpassword = "Password doesn't match";
     }
     return err;
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
     setError(validation());
-    // if (Object.keys(error)?.length === 0) {
-    //   ("");
-    // }
   };
   return (
     <div className={styles.loginPageHugging}>
@@ -45,12 +53,12 @@ const Forget = () => {
             <span className={styles.absoluteSVG}>{passwordicon}</span>
             <InputFeild
               style={input}
-              className="form-input-hugging save-lib-hugging"
               type="password"
               placeholder="Enter New Password"
               name="password"
               value={forgot.password}
-              onChange={handleChange}
+              addValue={handleChange}
+              id=""
             />
           </div>
           <div className={styles.errors}>{error?.password}</div>
@@ -61,21 +69,20 @@ const Forget = () => {
               placeholder=" Confirm Password"
               name="cpassword"
               value={forgot.cpassword}
-              onChange={handleChange}
+              addValue={handleChange}
               style={input}
+              id=""
             />
           </div>
           <div className={styles.errors}>{error?.cpassword}</div>
 
           <ButtonShow
-            className="login-Btn-hugging"
             type="submit"
-            size="md"
             name="SUBMIT"
             style={buttonStyle.fill}
-          >
-            SUBMIT
-          </ButtonShow>
+            action={() => {}}
+            styleClass=""
+          />
         </form>
       </div>
 
@@ -83,12 +90,12 @@ const Forget = () => {
         <span className="iuevlkmso">
           Already know password?
           <ButtonShow
-            action={() => navigate('/login')}
-            name="Sign In"
+            action={() => navigate("/login")}
+            name="Log In"
             style={buttonStyle.transparent}
-          >
-            Sign In
-          </ButtonShow>
+            type=""
+            styleClass=""
+          />
         </span>
       </div>
     </div>
