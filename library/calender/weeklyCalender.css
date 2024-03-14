@@ -1,0 +1,55 @@
+.collapseCalender .ant-collapse-header {
+  justify-content: center;
+  flex-direction: row-reverse;
+  gap: 1rem;
+  background-color: #f6ece2;
+  font-weight: 700;
+}
+
+.collapseCalender .ant-collapse-header[aria-expanded=true] {
+  background-color: #ff0e7c;
+  color: #fff;
+}
+
+.collapseCalender .ant-collapse-content-box {
+  padding: 0 !important;
+}
+
+.collapseCalender .ant-collapse-item {
+  margin-bottom: 1rem;
+  border: 0;
+}
+
+.collapseCalender .ant-collapse {
+  border: 0;
+}
+
+.collapseCalender .ant-table-body .ant-table-cell > div {
+  width: 96% !important;
+  margin: 0 4px;
+}
+
+.collapseCalender .ant-collapse-header span {
+  margin-inline-end: 0 !important;
+  flex: none !important;
+}
+
+.collapseCalender tr.ant-table-row.ant-table-row-level-0 {
+  box-shadow: none !important;
+}
+
+.headerCalendar tr.ant-table-row.ant-table-row-level-0 {
+  display: none;
+}
+
+.morningCalendar .ant-table-header {
+  display: none;
+}
+
+.weeklyCalWrapper button.ant-btn.css-dev-only-do-not-override-2rgkd4.ant-btn-default {
+  border-radius: 50%;
+  height: 44px;
+}
+.weeklyCalWrapper .ant-col.css-dev-only-do-not-override-2rgkd4 {
+  align-items: center;
+}/*# sourceMappingURL=weeklyCalender.css.map */
